@@ -1,8 +1,8 @@
 
 # T3020   Repo for ELEN3020
 
-Name: Gift Maposa
-Date: 8 June
+Name: Scott Hazelhurst
+Date: 7 June
 
 
 # Description of code -- for question 1.1 and 1.2
