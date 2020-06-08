@@ -1,5 +1,4 @@
 
-
 import urllib
 import urllib.request
 import ssl
@@ -13,35 +12,38 @@ import sys
 # python3 datamunger.py see.csv
 # gets data from same directory
 
-origin=sys.argv[1]
+
+origin= sys.argv[0]
 
 def calc_total(curr):
     computed=0
-    for c in curr[2:9]: #E1
-        computed=computed+c
+    for c in curr[1:9]: #E1
+        computed = computed + c
     return computed
 
 
 def check_monotonic(prev,curr):
-   # Now check monotonicity and update  prev so next time round we compare
-   # against this row
-    for i in range(9):
-        if curr[i] <=  prev[i]:  #E2
+   #Now check monotonicity and update  prev so next time round we compare
+   #against this row
+    for i in curr[0:8]:
+         if curr[i] < prev[i]: #E2
             print("Monotonic error at column %d comparing lines %d and %d  "%(i,n-1,n),
                      "values %d and %d"%(curr[i],prev[i]))
-        prev[i]=curr[i]  
+         prev[i]=curr[i]  
+
 
 
 def check_row(n, prev, curr_str):
     data = []
     curr = []
-    for d in curr_str: #E3
+    for d in curr_str[0:10]: #E3
         try:
             v = int(d)
             curr.append(v)
         except ValueError:  # missing data so can't convert
             return False
     computed = calc_total(curr)
+
     if computed != curr[0]:
         print("Sum error at line ",n, curr_str,
               "computed %d and expected %d"%(computed, curr[0]))
@@ -71,3 +73,4 @@ for  line in inp:
      if not ok:
          missing = missing+1
 print("There were ",missing," missing lines")
+
