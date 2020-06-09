@@ -1,4 +1,4 @@
-print("Scott was here")
+
 import urllib
 import urllib.request
 import ssl
@@ -40,7 +40,7 @@ def check_row(n, prev, curr_str):
         try:
             v = int(d)
             curr.append(v)
-        except ValueError:  # missing data so can't convert
+        except ValueError:  # missing datprint("Scott was here")a so can't convert
             return False
     computed = calc_total(curr)
 
