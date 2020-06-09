@@ -5,7 +5,6 @@ Name: Gift Maposa
 
 
 Date: 8 June 2020
-Scott
 
 # Description of code -- for question 1.1 and 1.2
 
